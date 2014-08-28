@@ -58,3 +58,26 @@ NOTICE: `restore` subcommand performs `poweroff` and `startvm` before/after `res
 $ vboxss delete vm1 provisioned
 ```
 
+Installation
+------------
+
+### Just want the binary?
+
+Go to the [releases page](https://github.com/hirose31/vboxss/releases), find the version you want, and download the zip file. Unpack the zip file, and put the binary to somewhere you want (on UNIX-y systems, /usr/local/bin or the like). Make sure it has execution bits turned on. Yes, it is a single binary! You can put it anywhere you want :)
+
+_THIS IS THE RECOMMENDED WAY_
+
+### go get
+
+If you want to go the Go way (install in GOPATH/bin) and just want the command:
+
+```
+go get github.com/hirose31/vboxss
+```
+
+
+AUTHORS
+-------
+
+* HIROSE Masaaki (hirose31)
+
