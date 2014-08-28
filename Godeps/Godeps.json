@@ -1,0 +1,5 @@
+{
+	"ImportPath": "github.com/hirose31/vboxss",
+	"GoVersion": "go1.3",
+	"Deps": []
+}
