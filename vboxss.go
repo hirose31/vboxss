@@ -1,5 +1,3 @@
-// +build vboxss
-
 package main
 
 import(
