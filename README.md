@@ -76,7 +76,7 @@ go get github.com/hirose31/vboxss
 ```
 
 
-AUTHORS
+Authors
 -------
 
 * HIROSE Masaaki (hirose31)
