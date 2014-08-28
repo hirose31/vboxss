@@ -185,8 +185,9 @@ func listCmd() command {
 	fs := flag.NewFlagSet("list", flag.ExitOnError)
 
 	fs.Usage = func() {
-		fmt.Println("list:\n  Print information about running VMs")
-		fmt.Println("list [vmname]:\n  Print information about snapshots of the VM")
+		fmt.Println("list\n  Print information about running VMs")
+		fmt.Print("\n");
+		fmt.Println("list <vmname>\n  Print information about snapshots of the VM")
 		fs.PrintDefaults()
 	}
 
@@ -245,7 +246,7 @@ func takeCmd() command {
 	fs := flag.NewFlagSet("take", flag.ExitOnError)
 
 	fs.Usage = func() {
-		fmt.Println("take <vmname> <snapshot name>:\n  Take the snapshot of the specified VM")
+		fmt.Println("take <vmname> <snapshot name>\n  Take the snapshot of the specified VM")
 		fs.PrintDefaults()
 	}
 
@@ -286,7 +287,7 @@ func deleteCmd() command {
 	fs := flag.NewFlagSet("delete", flag.ExitOnError)
 
 	fs.Usage = func() {
-		fmt.Println("delete <vmname> <snapshot name>:\n  Delete the snapshot of the specified VM")
+		fmt.Println("delete <vmname> <snapshot name>\n  Delete the snapshot of the specified VM")
 		fs.PrintDefaults()
 	}
 
@@ -328,7 +329,7 @@ func restoreCmd() command {
 	fs := flag.NewFlagSet("restore", flag.ExitOnError)
 
 	fs.Usage = func() {
-		fmt.Println("restore <vmname> <snapshot name>:\n  Restore VM from the specified snapshot")
+		fmt.Println("restore <vmname> <snapshot name>\n  Restore VM from the specified snapshot")
 		fs.PrintDefaults()
 	}
 
@@ -374,3 +375,4 @@ func restoreSnapshot(args []string) (err error) {
 	fmt.Println("done!")
 	return nil
 }
+
