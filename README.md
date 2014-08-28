@@ -1,12 +1,21 @@
 vboxss
 ======
 
-Utility tool for managing snapshot of VirtualBox easily
+Utility to manage snapshots of VirtualBox easily
 
 Description
 -----------
 
-fixme
+[Sahara vagrant plugin](https://github.com/jedi4ever/sahara) provides sandbox mode using snapshot feature of VirtualBox. But sahara can manage only one snapshot.
+
+We can manage many snapshots by `vboxmanage` but it is annoying.
+
+This `vboxss` is the utility to manage snapshots of VirtualBox easily.
+
+- Can specify by short VM name
+    - `vm1` instead of long `vm1_default_1404895653615_55181`
+- Can restore only one command
+    - internally `poweroff` and `startvm` before, after `restore` snapshot
 
 Usage
 -----
