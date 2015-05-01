@@ -116,6 +116,7 @@ func retrieve_vms() (vms []vm, err error) {
 
 	re_line, _ := regexp.Compile(`"([^"]+)"\s+{([^}]+)}`)
 	re_vmname, _ := regexp.Compile(`^(.+)_default_[0-9_]+`)
+	re_vmname_long, _ := regexp.Compile(`^([^_]+_[^_]+)_[0-9_]+`)
 	for {
 		line, err := out.ReadString('\n')
 		if err == io.EOF {
@@ -133,6 +134,11 @@ func retrieve_vms() (vms []vm, err error) {
 			match := re_vmname.FindStringSubmatch(vmname)
 			if match != nil {
 				short_vmname = match[1]
+			} else {
+				match = re_vmname_long.FindStringSubmatch(vmname)
+				if match != nil {
+					short_vmname = match[1]
+				}
 			}
 
 			vms = append(vms, vm{vmname, short_vmname, uuid})
