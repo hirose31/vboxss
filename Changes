@@ -1,6 +1,10 @@
 Changes
 =======
 
+v0.1.1 - 2015-05-08
+  Features
+  * Support short names for named VMs (not "default") #2 (thanks: @key-amb)
+
 v0.1.0 - 2014-08-28
   Features
   * Initial release
