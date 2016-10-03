@@ -1,26 +1,26 @@
 package main
 
-import(
-	"fmt"
-	"os"
-	"flag"
-	"log"
+import (
 	"bytes"
-	"os/exec"
+	"flag"
+	"fmt"
 	"io"
+	"log"
+	"os"
+	"os/exec"
 	"regexp"
 )
 
 type command struct {
-	fs *flag.FlagSet
-	fn func(args []string) error
+	fs    *flag.FlagSet
+	fn    func(args []string) error
 	usage func()
 }
 
 type vm struct {
-	vmname string
+	vmname       string
 	short_vmname string
-	uuid string
+	uuid         string
 }
 
 type snapshot struct {
@@ -30,10 +30,10 @@ type snapshot struct {
 
 func main() {
 	commands := map[string]command{
-		"list": listCmd(),
-		"take": takeCmd(),
+		"list":    listCmd(),
+		"take":    takeCmd(),
 		"restore": restoreCmd(),
-		"delete": deleteCmd(),
+		"delete":  deleteCmd(),
 	}
 
 	flag.Usage = func() {
@@ -80,7 +80,7 @@ func runCommand(args []string) (out bytes.Buffer, oer bytes.Buffer, err error) {
 	return out, oer, nil
 }
 
-func normalize_vmname(vmname string) (string) {
+func normalize_vmname(vmname string) string {
 	var candidate_vms []vm
 
 	vms, err := retrieve_vms()
@@ -190,7 +190,7 @@ func listCmd() command {
 
 	fs.Usage = func() {
 		fmt.Println("list\n  Print information about running VMs")
-		fmt.Print("\n");
+		fmt.Print("\n")
 		fmt.Println("list <vmname>\n  Print information about snapshots of the VM")
 		fs.PrintDefaults()
 	}
@@ -379,4 +379,3 @@ func restoreSnapshot(args []string) (err error) {
 	fmt.Println("done!")
 	return nil
 }
-
