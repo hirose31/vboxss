@@ -1,6 +1,10 @@
 Changes
 =======
 
+v0.1.2 - 2017-01-18
+  Enhancement
+  * Migrate to wercker v2
+
 v0.1.1 - 2015-05-08
   Features
   * Support short names for named VMs (not "default") #2 (thanks: @key-amb)
