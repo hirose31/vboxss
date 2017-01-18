@@ -1,4 +1,4 @@
-box: lestrrat/peco-build
+box: multiarch/goxc
 build:
   steps:
     - setup-go-workspace
