@@ -33,21 +33,28 @@ deploy:
     - wercker/github-upload-asset:
         token: $GITHUB_TOKEN
         file: snapshot/vboxss_linux_386.tar.gz
+        content-type: application/gzip; charset=binary
     - wercker/github-upload-asset:
         token: $GITHUB_TOKEN
         file: snapshot/vboxss_linux_amd64.tar.gz
+        content-type: application/gzip; charset=binary
     - wercker/github-upload-asset:
         token: $GITHUB_TOKEN
         file: snapshot/vboxss_linux_arm.tar.gz
+        content-type: application/gzip; charset=binary
     - wercker/github-upload-asset:
         token: $GITHUB_TOKEN
         file: snapshot/vboxss_darwin_386.zip
+        content-type: application/zip; charset=binary
     - wercker/github-upload-asset:
         token: $GITHUB_TOKEN
         file: snapshot/vboxss_darwin_amd64.zip
+        content-type: application/zip; charset=binary
     - wercker/github-upload-asset:
         token: $GITHUB_TOKEN
         file: snapshot/vboxss_windows_386.zip
+        content-type: application/zip; charset=binary
     - wercker/github-upload-asset:
         token: $GITHUB_TOKEN
         file: snapshot/vboxss_windows_amd64.zip
+        content-type: application/zip; charset=binary
